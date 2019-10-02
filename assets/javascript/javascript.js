@@ -1,7 +1,7 @@
 $(document).ready(function() {
     //array of topics
     var topics = ['Golf', 'Tiger Woods', 'Baseball', 'Aaron Judge', 'Football', 'Russel Wilson', 'Soccer', 'Lionel Messi', 'Snowboarding', 'Travis Rice', 'Swimming', 'Michael Phelps', 'Basketball', 'Michael Jordan', 'Boxing', 'Mike Tyson'];
-    function createHtmlButton(){
+    function createHtmlButton() {
         for  (let i = 0; i < topics.length; i++) {
             var a = $('<button>');
             //add classes and attributes to each button from array
@@ -24,7 +24,7 @@ $(document).ready(function() {
         //queary url
         var quearyUrl = 'https://api.giphy.com/v1/gifs/search?q=' + searchInput + '&limit=10&api_key=' + apiKey;
 
-        $a.jax({
+        $a.jax ({
             url: quearyUrl,
             method: "GET"
         }).then(function(response) {
@@ -33,7 +33,7 @@ $(document).ready(function() {
                 //builds a bootstrap card and assigns it to a variable
                 var rating = reponse.data[i].rating;
                 var data = response.data[i].images;
-                var p = $('<p>').css('font-family', )
+                var p = $('<p>').css('font-family','"Poppins", sans-serif').text('Rating: ' + rating);
                 var animated = data.fixed_height_still.url;
                 var image = $('<img class="card-img-top">')
                     .attr('src', still)
